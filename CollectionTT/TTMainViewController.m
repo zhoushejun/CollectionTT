@@ -51,9 +51,9 @@ CGFloat spacing = 30.0f;
 {
     self.arrayData = [NSMutableArray array];
     for (NSInteger i = 1; i <= 20; i++) {
-        NSString *photoName = [NSString stringWithFormat:@"dog.jpg"];
+        NSString *photoName = [NSString stringWithFormat:@"cal.png"];
         if (i %2 == 0) {
-            photoName = [NSString stringWithFormat:@"my.jpg"];
+            photoName = [NSString stringWithFormat:@"date.png"];
         }
         [self.arrayData addObject:photoName];
     }
@@ -83,8 +83,6 @@ CGFloat spacing = 30.0f;
     TTMainCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
     cell.imageView.frame = cell.bounds;
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [self.arrayData objectAtIndex:indexPath.row]]];
-    CGAffineTransform transaction = CGAffineTransformMakeRotation(M_PI_4);
-    cell.transform = transaction;
     cell.labelTitle.text = [NSString stringWithFormat:@"%i-%@", indexPath.row, [self.arrayData objectAtIndex:indexPath.row]];
     return cell;
 }
@@ -92,7 +90,7 @@ CGFloat spacing = 30.0f;
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     TTDetailViewController *DetailViewController = [[TTDetailViewController alloc] init];
-    DetailViewController.strImageName = [NSString stringWithFormat:@"dog.jpg"];
+    DetailViewController.strImageName = [NSString stringWithFormat:@"cal.png"];
     [self.navigationController pushViewController:DetailViewController animated:YES];
 }
 

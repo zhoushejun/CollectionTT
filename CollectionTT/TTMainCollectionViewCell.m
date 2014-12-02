@@ -20,13 +20,11 @@
         self.imageView = imgView;
         [self addSubview:self.imageView];
         
-        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height / 2, 1.414 * frame.size.width, 20)];
+        UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, frame.size.height / 2, frame.size.width, 20)];
         lab.backgroundColor = [UIColor clearColor];
         lab.textAlignment = NSTextAlignmentCenter;
         lab.textColor = [UIColor  whiteColor];
         lab.font = [UIFont systemFontOfSize:18.0];
-        CGAffineTransform transform = CGAffineTransformMakeRotation(-M_PI_4);
-        lab.transform = transform;
         self.labelTitle = lab;
         [self addSubview:self.labelTitle];
     }

@@ -227,8 +227,6 @@ typedef NS_ENUM(NSInteger, TTScrollDirction) {
             UIImageView *cellFakeImageView = [[UIImageView alloc] initWithFrame:cell.bounds];
             cellFakeImageView.contentMode = UIViewContentModeScaleAspectFill;
             [cellFakeImageView setCellCopiedImage:cell];
-            CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI_4);
-            cellFakeImageView.transform = transform;
             [self.collectionView addSubview:_cellFakeView];
             [_cellFakeView addSubview:cellFakeImageView];
             //set center
